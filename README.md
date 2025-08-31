@@ -22,15 +22,7 @@ aws s3api create-bucket --bucket tf-techapricate --region us-east-1
 
 #Create a DynamoDB table
 
-aws dynamodb create-table \
-
-  --table-name terraform-locks \
-  
-  --attribute-definitions AttributeName=LockID,AttributeType=S \
-  
-  --key-schema AttributeName=LockID,KeyType=HASH \
-  
-  --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
+aws dynamodb create-table --table-name terraform-locks --attribute-definitions AttributeName=LockID,AttributeType=S --key-schema AttributeName=LockID,KeyType=HASH --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
 
 # Initialize Terraform
 
